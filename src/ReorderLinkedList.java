@@ -8,5 +8,16 @@ public class ReorderLinkedList {
     * odd, the second even, the third odd continuing with the same pattern...
     *
     *
+    * Example 1:
+    *   Input: 1 -> 2 -> 3 -> 4 -> 5
+    *   Output: 1 -> 3 -> 5 -> 2 -> 4
+    *   Explanation: The odd-indexed nodes are [1,3,5] and the even-indexed nodes are [2,4]. We reorder the list by
+    *   listing all the odd-indexed nodes first, followed by the even-indexed nodes.
+    *
+    * Example 2:
+    *   Input: 2 -> 1 -> 3 -> 5 -> 6 -> 4 -> 7
+    *   Output: 2 -> 3 -> 6 -> 7 -> 1 -> 5 -> 4
+    *   Explanation: Explanation: The odd-indexed nodes are [2,3,6,7,1,5] and the even-indexed nodes are [1,5,4].
+    *   We reorder the list by listing all the odd-indexed nodes first, followed by the even-indexed nodes.
      * */
 }
