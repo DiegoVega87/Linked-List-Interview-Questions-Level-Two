@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class ReorderLinkedList {
 
     /*
@@ -20,4 +22,32 @@ public class ReorderLinkedList {
     *   Explanation: Explanation: The odd-indexed nodes are [2,3,6,7,1,5] and the even-indexed nodes are [1,5,4].
     *   We reorder the list by listing all the odd-indexed nodes first, followed by the even-indexed nodes.
      * */
+
+    public ListNode reorderList(ListNode head){
+
+        // If head is null or there is only one node, return it.
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        // Separate the list into even and odd halves.
+        ListNode evenHead = head.next;
+        ListNode oddCurr = head;
+        ListNode evenCurr = evenHead;
+
+        // Connect the nodes with their corresponding halves.
+        while(evenCurr != null && evenCurr.next != null){
+
+            oddCurr.next = evenCurr.next;
+            oddCurr = oddCurr.next;
+
+            evenCurr.next = oddCurr.next;
+            evenCurr = evenCurr.next;
+        }
+
+        // merge the halves.
+        oddCurr.next = evenHead;
+
+        return head;
+    }
 }
