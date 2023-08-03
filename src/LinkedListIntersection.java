@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class LinkedListIntersection {
 
     /*
@@ -34,5 +37,27 @@ public class LinkedListIntersection {
     *   headB.next.next = new ListNode(6);
     *
     *   Output: ListNode intersectingNode = null;
-     * */
+    * */
+
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB){
+
+        if(headA == null || headB == null){
+            return null;
+        }
+
+        Queue<ListNode> queue = new LinkedList<>();
+
+        while(headA != null){
+            queue.add(headA);
+            headA = headA.next;
+        }
+        while (headB != null){
+            if(queue.contains(headB)){
+                return headB;
+            }
+            headB = headB.next;
+        }
+        return null;
+    }
+
 }

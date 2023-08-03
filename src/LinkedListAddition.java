@@ -37,7 +37,7 @@ public class LinkedListAddition {
             curr.next = new ListNode(sum%10);
             curr = curr.next;
 
-            if(l1 !=null){
+            if(l1 != null){
                 l1 = l1.next;
             }
 
